@@ -10,28 +10,28 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "Blocks",
-    title: "Build Brand Trust",
+    icon: "Car",
+    title: "Modern ausgestattete Fahrzeuge",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Unsere Flotte umfasst topaktuelle, zuverlässige Fahrzeuge mit modernster Technik – für eine effiziente und komfortable Paketzustellung.",
   },
   {
-    icon: "LineChart",
-    title: "More Leads",
+    icon: "Target",
+    title: "Wachstumschancen",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "Werde Teil eines wachsenden Unternehmens mit zahlreichen Entwicklungsmöglichkeiten. Dein Engagement wird gesehen und belohnt.",
   },
   {
     icon: "Wallet",
-    title: "Higher Conversions",
+    title: "Leistungsgerechte Vergütung",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+      "Profitiere von fairer Bezahlung, pünktlicher Zahlung und attraktiven Bonusmöglichkeiten, die an deine Leistung gekoppelt sind.",
   },
   {
-    icon: "Sparkle",
-    title: "Test Marketing Ideas",
+    icon: "UserPlus",
+    title: "Flexible Arbeitszeiten",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Gestalte deine Arbeitszeiten flexibel und passgenau zu deinem Leben – perfekte Balance zwischen Arbeit und Freizeit.",
   },
 ];
 
@@ -40,15 +40,17 @@ export const BenefitsSection = () => {
     <section id="benefits" className="container py-24 sm:py-32">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
-          <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
+          <h2 className="text-lg text-primary mb-2 tracking-wider">JETZT BEWERBEN</h2>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Shortcut to Success
+            Verstärke unser Team als Paketzusteller / Kurierfahrer (m/w/d)
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
+            Wir suchen Verstärkung in den Regionen:
+            <br />
+            Raum Nürnberg
+            <br />
+            Raum Würzburg
           </p>
         </div>
 

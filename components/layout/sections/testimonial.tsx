@@ -1,4 +1,3 @@
-"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -26,53 +25,52 @@ interface ReviewProps {
 
 const reviewList: ReviewProps[] = [
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe",
-    userName: "Product Manager",
+    image: "https://media.discordapp.net/attachments/1336746303224545301/1337058626824572982/hero-image-light.jpg",
+    name: "Max Müller",
+    userName: "Logistikleiter",
     comment:
-      "Wow NextJs + Shadcn is awesome!. This template lets me change colors, fonts and images to match my brand identity. ",
+      "Die Lieferung war schnell und zuverlässig. Besonders die Expresszustellung hat uns beeindruckt! Sehr zu empfehlen.",
     rating: 5.0,
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "Sophia Collins",
-    userName: "Cybersecurity Analyst",
+    name: "Anna Weber",
+    userName: "Einkaufsmanagerin",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. ",
+      "Wir arbeiten regelmäßig mit VK Logistiks zusammen und sind immer sehr zufrieden. Die Kommunikation und das Timing sind hervorragend.",
     rating: 4.8,
   },
-
   {
     image: "https://github.com/shadcn.png",
-    name: "Adam Johnson",
-    userName: "Chief Technology Officer",
+    name: "Johannes Fischer",
+    userName: "Vertriebsleiter",
     comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    rating: 4.9,
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "Ethan Parker",
-    userName: "Data Scientist",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "Mit VK Logistiks haben wir immer einen zuverlässigen Partner an unserer Seite. Die Lieferung unserer Maschinen erfolgte pünktlich und in einwandfreiem Zustand.",
     rating: 5.0,
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "Ava Mitchell",
-    userName: "IT Project Manager",
+    name: "Claudia Schmitt",
+    userName: "Supply Chain Managerin",
     comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud incididunt consectetur adipiscing elit.",
+      "Die Tracking-Optionen von VK Logistiks haben uns die Arbeit sehr erleichtert. Wir konnten jederzeit den Status unserer Sendungen einsehen.",
+    rating: 4.9,
+  },
+  {
+    image: "https://github.com/shadcn.png",
+    name: "Michael Bauer",
+    userName: "Frachtmanager",
+    comment:
+      "Ich war besonders beeindruckt von der Flexibilität bei unseren Sonderanforderungen. Die Lieferung war pünktlich und der Kundenservice hervorragend.",
     rating: 5.0,
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "Isabella Reed",
-    userName: "DevOps Engineer",
+    name: "Sabrina Koch",
+    userName: "Logistikkoordinatorin",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    rating: 4.9,
+      "Ein sehr zuverlässiger Service. Die Zustellung war schnell, und ich konnte mich jederzeit auf den Lieferstatus verlassen.",
+    rating: 4.8,
   },
 ];
 
@@ -81,11 +79,11 @@ export const TestimonialSection = () => {
     <section id="testimonials" className="container py-24 sm:py-32">
       <div className="text-center mb-8">
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-          Testimonials
+          Kundenbewertungen
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-          Hear What Our 1000+ Clients Say
+          Was unsere Kunden sagen
         </h2>
       </div>
 
@@ -104,11 +102,14 @@ export const TestimonialSection = () => {
               <Card className="bg-muted/50 dark:bg-card">
                 <CardContent className="pt-6 pb-0">
                   <div className="flex gap-1 pb-6">
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
+                    {[...Array(5)].map((_, index) => (
+                      <Star
+                        key={index}
+                        className={`size-4 fill-primary text-primary ${
+                          index < review.rating ? "fill-primary" : "fill-muted"
+                        }`}
+                      />
+                    ))}
                   </div>
                   {`"${review.comment}"`}
                 </CardContent>
@@ -117,10 +118,10 @@ export const TestimonialSection = () => {
                   <div className="flex flex-row items-center gap-4">
                     <Avatar>
                       <AvatarImage
-                        src="https://avatars.githubusercontent.com/u/75042455?v=4"
-                        alt="radix"
+                        src={review.image}
+                        alt={review.name}
                       />
-                      <AvatarFallback>SV</AvatarFallback>
+                      <AvatarFallback>{review.name[0]}</AvatarFallback>
                     </Avatar>
 
                     <div className="flex flex-col">

@@ -11,39 +11,39 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    title: "Mobilität",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Mit unserer mobilen Lösung haben Sie jederzeit Zugriff auf Ihre Logistikdaten – egal, wo Sie sich befinden. Flexibilität und Effizienz stehen bei uns an erster Stelle.",
   },
   {
     icon: "BadgeCheck",
-    title: "Social Proof",
+    title: "Zuverlässigkeit",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Unser Service steht für höchste Verlässlichkeit. Pünktliche Lieferung und transparente Prozesse gehören zu unseren wichtigsten Grundsätzen.",
   },
   {
     icon: "Goal",
-    title: "Targeted Content",
+    title: "Gezielte Routenplanung",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Durch unsere präzise Routenoptimierung stellen wir sicher, dass Ihre Sendungen schnell und sicher ans Ziel kommen, und das zu den niedrigsten Kosten.",
   },
   {
     icon: "PictureInPicture",
-    title: "Strong Visuals",
+    title: "Transparente Kommunikation",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Sie wissen immer genau, wo sich Ihre Sendung befindet. Echtzeit-Tracking und regelmäßige Updates machen die Logistikplanung stressfrei.",
   },
   {
     icon: "MousePointerClick",
-    title: "Clear CTA",
+    title: "Einfache Bestellung",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Bestellen Sie Logistikdienstleistungen ganz einfach über unsere benutzerfreundliche Plattform – keine komplizierten Schritte, nur schnelle Lösungen.",
   },
   {
     icon: "Newspaper",
-    title: "Clear Headline",
+    title: "Klarheit in der Dokumentation",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Jede Sendung wird gründlich dokumentiert. Sie erhalten alle nötigen Informationen auf einen Blick, um Ihre Logistikprozesse jederzeit zu überwachen.",
   },
 ];
 
@@ -51,17 +51,15 @@ export const FeaturesSection = () => {
   return (
     <section id="features" className="container py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Features
+        Unsere Stärken
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        Was uns auszeichnet
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        Vertrauen Sie auf unsere Expertise in der Logistik, um Ihre Prozesse zu optimieren und Ihre Ziele schneller zu erreichen.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

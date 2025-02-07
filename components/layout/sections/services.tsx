@@ -10,33 +10,37 @@ enum ProService {
   YES = 1,
   NO = 0,
 }
+
 interface ServiceProps {
   title: string;
   pro: ProService;
   description: string;
 }
+
 const serviceList: ServiceProps[] = [
   {
-    title: "Custom Domain Integration",
+    title: "Sonder- und Expressfahrten",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
-    pro: 0,
+      "Eilige Lieferungen und Sonderfahrten für Ihre zeitkritischen Sendungen. Wir garantieren schnelle Zustellung – auch außerhalb der regulären Zeiten.",
+    pro: ProService.YES,
   },
   {
-    title: "Social Media Integrations",
+    title: "Internationale Logistiklösungen",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
-    pro: 0,
+      "Wir bieten maßgeschneiderte Lösungen für den internationalen Versand. Ihre Waren erreichen sicher und pünktlich jedes Ziel weltweit.",
+    pro: ProService.YES,
   },
   {
-    title: "Email Marketing Integrations",
-    description: "Lorem dolor sit amet adipisicing.",
-    pro: 0,
+    title: "Sendungsverfolgung in Echtzeit",
+    description:
+      "Behalten Sie den Überblick über jede Sendung. Mit unserer Echtzeit-Tracking-Funktion wissen Sie immer, wo sich Ihre Lieferung befindet.",
+    pro: ProService.NO,
   },
   {
-    title: "SEO Optimization",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-    pro: 1,
+    title: "Lagerlogistik",
+    description:
+      "Optimierte Lagerlösungen für Ihr Unternehmen. Vom einfachen Einlagern bis hin zur komplexen Verwaltung von Beständen bieten wir effiziente Lösungen.",
+    pro: ProService.NO,
   },
 ];
 
@@ -44,17 +48,15 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="container py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Services
+        Unsere Dienstleistungen
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Grow Your Business
+        Was wir für Sie tun können
       </h2>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        From marketing and sales to operations and strategy, we have the
-        expertise to help you achieve your goals.
+        Zuverlässige Logistiklösungen für Ihre individuellen Bedürfnisse – von Expresslieferungen bis zur internationalen Distribution.
       </h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto">
         {serviceList.map(({ title, description, pro }) => (

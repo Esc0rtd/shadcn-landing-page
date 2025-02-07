@@ -1,5 +1,4 @@
 "use client";
-import { ChevronsDown, Github, Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,
@@ -20,23 +19,18 @@ import {
 } from "../ui/navigation-menu";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
+import Image from "next/image";
 
 interface RouteProps {
   href: string;
   label: string;
 }
 
-interface FeatureProps {
-  title: string;
-  description: string;
-}
-
 const routeList: RouteProps[] = [
   {
     href: "#testimonials",
-    label: "Testimonials",
+    label: "Bewertungen",
   },
   {
     href: "#team",
@@ -44,28 +38,11 @@ const routeList: RouteProps[] = [
   },
   {
     href: "#contact",
-    label: "Contact",
+    label: "Kontakt",
   },
   {
     href: "#faq",
     label: "FAQ",
-  },
-];
-
-const featureList: FeatureProps[] = [
-  {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
-  },
-  {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
-  },
-  {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
   },
 ];
 
@@ -74,17 +51,34 @@ export const Navbar = () => {
   return (
     <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
       <Link href="/" className="font-bold text-lg flex items-center">
-        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        Shadcn
+        {/* Hier das Bild einfügen */}
+        <Image
+          src="https://media.discordapp.net/attachments/1336746303224545301/1337431215774498816/Unbenannt-1.png?ex=67a76b62&is=67a619e2&hm=05bbf79a7e88266e14d79b52512be2f501a27d8a8e90293be7b2f365a259bc3c&=&format=webp&quality=lossless&width=489&height=489" // Ersetze dies durch deine Bild-URL
+          alt="Logo"
+          width={36}
+          height={36}
+          className="rounded-lg mr-2"
+        />
+        VK Logistiks
       </Link>
+
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Menu
+            <Button
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer lg:hidden"
-            />
+            >
+              {/* Ersetze dies durch ein beliebiges Bild oder Icon */}
+              <Image
+                src="https://media.discordapp.net/attachments/1336746303224545301/1336746353459724319/VK_LOGO_3d_aa.png?ex=67a5964e&is=67a444ce&hm=8e63191e7749d9ab1a23b62224637cdb1487e342edab4f396c4bbce86c4dd982&=&format=webp&quality=lossless&width=489&height=489                                                                                                                                            " // Ersetze dies durch dein gewünschtes Bild
+                alt="Menu"
+                width={36}
+                height={36}
+                className="rounded-lg"
+              />
+            </Button>
           </SheetTrigger>
 
           <SheetContent
@@ -95,8 +89,15 @@ export const Navbar = () => {
               <SheetHeader className="mb-4 ml-4">
                 <SheetTitle className="flex items-center">
                   <Link href="/" className="flex items-center">
-                    <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                    Shadcn
+                    {/* Hier das Bild einfügen */}
+                    <Image
+                      src="https://media.discordapp.net/attachments/1336746303224545301/1336746353459724319/VK_LOGO_3d_aa.png?ex=67a5964e&is=67a444ce&hm=8e63191e7749d9ab1a23b62224637cdb1487e342edab4f396c4bbce86c4dd982&=&format=webp&quality=lossless&width=489&height=489" // Ersetze dies durch deine Bild-URL
+                      alt="Logo"
+                      width={36}
+                      height={36}
+                      className="rounded-lg mr-2"
+                    />
+                    VK Logistiks
                   </Link>
                 </SheetTitle>
               </SheetHeader>
@@ -129,38 +130,6 @@ export const Navbar = () => {
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-card text-base">
-              Features
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/75042455?v=4"
-                  alt="RadixLogo"
-                  className="h-full w-full rounded-md object-cover"
-                  width={600}
-                  height={600}
-                />
-                <ul className="flex flex-col gap-2">
-                  {featureList.map(({ title, description }) => (
-                    <li
-                      key={title}
-                      className="rounded-md p-3 text-sm hover:bg-muted"
-                    >
-                      <p className="mb-1 font-semibold leading-none text-foreground">
-                        {title}
-                      </p>
-                      <p className="line-clamp-2 text-muted-foreground">
-                        {description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
             {routeList.map(({ href, label }) => (
               <NavigationMenuLink key={href} asChild>
                 <Link href={href} className="text-base px-2">
@@ -174,16 +143,6 @@ export const Navbar = () => {
 
       <div className="hidden lg:flex">
         <ToggleTheme />
-
-        <Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
-          <Link
-            aria-label="View on GitHub"
-            href="https://github.com/nobruf/shadcn-landing-page.git"
-            target="_blank"
-          >
-            <Github className="size-5" />
-          </Link>
-        </Button>
       </div>
     </header>
   );
